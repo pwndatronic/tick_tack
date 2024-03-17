@@ -30,11 +30,11 @@ def player_input(char):
             continue
 
 def fill_the_boards(char):
-    x, y = player_input(char)
     while True:
+        x, y = player_input(char)
         if in_game_field[x][y] != '-':
             print("\nЭто поле уже занято, попробуйте снова.")
-            fill_the_boards(char)
+            continue
         else:
             in_game_field[x][y] = char
             starting_field[x + 1][y + 1] = char
