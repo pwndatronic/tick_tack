@@ -9,6 +9,7 @@ print("\nДавайте сыграем в крестики нолики.\n\n"
       "Для того, чтоб ваш ход учелся, дайте ответ в виде числа,"
       "\nгде перва цифра отображает номер ряда, а вторая - столбика.\n")
 
+
 def draw_field():
     for i in starting_field:
         print(' '.join(i))
@@ -29,6 +30,7 @@ def player_input(char):
             print("\nВы ввели неверный формат, попробуйте снова.")
             continue
 
+
 def fill_the_boards(char):
     while True:
         x, y = player_input(char)
@@ -39,6 +41,7 @@ def fill_the_boards(char):
             in_game_field[x][y] = char
             starting_field[x + 1][y + 1] = char
         break
+
 
 def win_condition(in_game_field):
     for x in in_game_field:
@@ -53,6 +56,7 @@ def win_condition(in_game_field):
         return in_game_field
     else:
         return False
+
 
 def lets_play():
     turn = 1
@@ -71,5 +75,6 @@ def lets_play():
             draw_field()
             print(f"\nНичья.")
             break
+
 
 lets_play()
